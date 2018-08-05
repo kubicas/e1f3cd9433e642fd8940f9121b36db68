@@ -1,0 +1,63 @@
+\subsection{Mount USB repository}
+
+\begin{frame}[fragile]{Concept}
+\begin{itemize}[<+->]
+\item Somewhere there is a (git) repository...
+\item and a !flying_start! directory
+\item For now, this repository is simulated with an USB stick.
+\item SW shall {\em not} depend on this USB simulation\\
+      (except !procts/share000/comp/flying_start!)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Windows (1/2)}
+\begin{enumerate}
+\item create directories !procts! and !procts_repo! next to each other,\\
+      hence the path to !procts! is !<procts_path>!\\
+      hence the path to !procts_repo! is !<procts_repo_path>!\\
+\item open the windows command prompt
+\item !diskpart!
+\item !list volume!
+\item Find in the list the volume which is labeled !PROCTS_REPO!,\\
+    hence the volume number is !<v>!\\
+    hence the letter !<l>!
+\item !select volume <v>!
+\item !assign mount="<procts_repo_path>"!
+\seti % save enumeration counter
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Windows (2/2)}
+\begin{enumerate}
+\conti % continue with saved counter
+\item !exit!
+\item !xcopy <procts_repo_path>\flying_start\winx86r <procts_path>\flying_start\winx86r\!
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Linux}
+\begin{enumerate}
+\item \tbc
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{OSX}
+\begin{enumerate}
+\item \tbc
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Flying start}
+\begin{enumerate}
+\item Navigate to !<procts_path>\flying_start\!
+\item Execute \TOEXECUTE
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{How to create the USB stick}
+\begin{enumerate}
+\item Obtain a removable mass storage device, e.g. USB stick
+\item Format as FAT32 with label !PROCTS_REPO!
+\item Unzip {\tbc} on this mass storage device in the root
+\end{enumerate}
+\end{frame}
